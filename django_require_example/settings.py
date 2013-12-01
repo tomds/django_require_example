@@ -36,6 +36,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'require',
+    
+    'django_require_example.main',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,3 +84,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
+STATICFILES_DIRS = [
+    'django_require_example/main/static',
+]
+
+TEMPLATE_DIRS = [
+    'django_require_example/templates'
+]
