@@ -1,7 +1,6 @@
 {
   "name": "django_require_example",
   "version": "0.0.0",
-  "directory": "face",
   
   "dependencies": {
     "jquery": "1.10.2"
