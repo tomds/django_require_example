@@ -4,3 +4,4 @@
 venv
 static
 django_require_example/db.sqlite3
+django_require_example/main/static/js/bower

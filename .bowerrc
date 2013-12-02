@@ -1,3 +1,3 @@
 {
-    "directory": "django_require_example/main/static/js/vendor"
+    "directory": "django_require_example/main/static/js/bower"
 }
