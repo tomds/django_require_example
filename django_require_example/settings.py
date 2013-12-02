@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(__file__)
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,7 +24,9 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+]
 
 
 # Application definition
@@ -84,11 +86,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    'django_require_example/main/static',
+    os.path.join(BASE_DIR, 'main/static'),
 ]
 
 TEMPLATE_DIRS = [
-    'django_require_example/templates'
+    os.path.join(BASE_DIR, 'templates'),
 ]
+
+STATICFILES_STORAGE = 'require.storage.OptimizedCachedStaticFilesStorage'
+REQUIRE_BUILD_PROFILE = 'main.build.js'
+
+debug = os.getenv('DEBUG')
+if debug == 'false':
+    DEBUG = False
+    STATIC_URL = 'http://localhost/static/'

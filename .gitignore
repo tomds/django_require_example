@@ -2,3 +2,5 @@
 *.wpu
 
 venv
+static
+django_require_example/db.sqlite3
